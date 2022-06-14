@@ -1,0 +1,16 @@
+class Bike 
+{
+	static String bike_name="R15";
+	static double bike_price=200000;
+	static String bike_model"v3";
+	public static void main (String[] args)
+	{
+	    System.out.println("Bike Details");
+		System.out.println("**********************");
+		System.out.println("Name of the bike is"bike_name);
+		System.out.println("Price of the bike is"bike_price);
+		System.out.println("Model of the bike is"bike_model);
+
+
+	}
+}
