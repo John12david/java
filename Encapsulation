@@ -1,0 +1,49 @@
+import java.util.Scanner;
+class Mobile
+{
+	static Scanner s=new Scanner(System.in);
+	private String sim_name="Jio";
+	private long ph_no=1234567890l;
+	private double price=28000;
+
+	Mobile()
+	{
+		//load inst
+	}
+	//Methods
+
+	//getters Method  will give The Data
+	public String getSimName()
+	{
+		return sim_name; 
+	}
+
+	public long getPhoneNum()
+	{
+		return this.ph_no;
+	}
+	public double getPrice()
+	{
+		return price;
+	}
+	//Setter Methods
+	public void setSimName(String n)
+	{
+		this.sim_name=n;
+		System.out.println("Data Member Modified Succesfully ");
+	}
+	public void setPhoneNumber(long l)
+	{
+		System.out.println("Enter Phone Number Before Modi");
+		long input=s.nextLong();
+		if(this.ph_no==input)
+		{
+			this.ph_no=l;
+			System.out.println("modified Phone Number Succesfully");
+		}else
+		{
+			System.out.println("Entered Phone Number is Wrong");
+		}
+	}
+
+}
