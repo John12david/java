@@ -1,0 +1,108 @@
+import java.util.Scanner;
+class Part1 
+{
+	static Scanner s=new Scanner(System.in);
+	static boolean b=true;
+	public static void main(String[] args)throws Exception
+	{
+		do{
+			System.out.println("Welcom to Logic Finder ");
+			System.out.println("********************************");
+			System.out.println();
+			System.out.println("************Menu*****************");
+			System.out.println("1.Factorial \n2.Prime\n3.DigitalSum\n4.Xylem\n5.Reverse\n6.Armstrong\n7.Perfect Number\n8.Fibonacci\n9.Palindrome\n10.Exit\n11.Pattern");
+			System.out.println();
+			int input=s.nextInt();
+			switch (input)
+			{
+			case 1:{
+						System.out.println("Please Enter Number For Finding Factorial ");
+						int num=s.nextInt();
+						int res=factorial(num);
+						System.out.println("Factorial of "+num+"is : "+res);
+						System.out.println();
+					break;}
+					
+			case 10:{
+				b=false;
+				System.out.println("*************** Thank You ***************");
+			break;}
+			case 6:{
+				System.out.println("Please Enter The Number To find Armstrong");
+				arms(s.nextInt());
+				System.out.println();
+		break;	}
+			case 11:{
+						System.out.println("Please Select Menu");
+						System.out.println("1.Triangle\n2.Pyramid");
+						int inputt=s.nextInt();
+						System.out.println();
+						switch (inputt)
+						{
+						case 1:{
+									System.out.println("Enter The Size of The Pattern");
+									int n=s.nextInt();
+									for (int i=0;i<n ;i++ )
+									{
+										for (int j=0;j<n ;j++ )
+										{
+											if(i>=j)
+											{
+												Thread.sleep(100);
+												System.out.print("* ");
+											}else
+												System.out.print("  ");
+										}
+										System.out.println();
+									}
+						break;}
+						
+						}
+			}
+			default :System.out.println("Leee Developer See Menu");
+			
+			}
+			
+		}while(b);
+	}
+	public static int factorial(int a)
+	{
+		int fact=1;
+		for (int i=a;i>=2 ;i-- )
+		{
+			fact=fact*i;
+		}
+		return fact;
+	}
+	public static void arms(int a) 
+	{
+		int num=a;
+		int temp=num;
+		int count=0;
+		while (num>0)
+		{
+			num/=10;
+			count++;
+		}
+		num=temp;
+		int store=0,product=1,sum=0;
+		while (num>0)
+		{
+			store=num%10;
+			for (int i=1;i<=count ;i++ )
+			{
+				product*=store;//
+				
+			}
+			sum=sum+product;
+			product=1;
+			num/=10;
+		}
+		if(temp==sum)
+		{
+			System.out.println("The Given is : Armstrong");
+		}
+		else
+			System.out.println("Not Armstrong");
+	}
+}
